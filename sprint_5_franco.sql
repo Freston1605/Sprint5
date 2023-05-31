@@ -1,10 +1,8 @@
-<<<<<<< HEAD
 /*
 Sprint Módulo 5
 Grupo 2
 */
 
-
 /*Creando la base de datos, las tablas e ingresando las entradas*/
 START TRANSACTION;
 
@@ -22,34 +20,6 @@ FLUSH PRIVILEGES;
 USE sprint_5;
 
 -- Creando la tabla de usuarios
-=======
-/* Sprint Módulo 5 Grupo 2 */
-
-/*Creando la base de datos, las tablas e ingresando las entradas*/
-
-START TRANSACTION;
-
--- Creando la base de datos
-
-CREATE DATABASE IF NOT EXISTS sprint_5;
-
--- Creando un usuario con todos los privilegios
-
-CREATE USER 'usuario'@'localhost' IDENTIFIED BY 'contraseña';
-
--- Otorgando los privilegios
-
-GRANT ALL PRIVILEGES ON sprint_5.* TO 'usuario'@'localhost';
-
-FLUSH PRIVILEGES;
-
--- Usando la base de datos
-
-USE sprint_5;
-
--- Creando la tabla de usuarios
-
->>>>>>> 05b5b947cd6ff0141deeab69e215643245d59525
 CREATE TABLE usuarios (
     id INT AUTO_INCREMENT,
     nombre VARCHAR(50),
@@ -61,10 +31,6 @@ CREATE TABLE usuarios (
 );
 
 -- Insertando 5 entradas a la tabla 'usuarios'
-<<<<<<< HEAD
-=======
-
->>>>>>> 05b5b947cd6ff0141deeab69e215643245d59525
 INSERT INTO usuarios (nombre, apellido, edad, correo, veces_utilizado)
 VALUES
     ('Juan', 'Pérez', 25, 'juan@correo.com', 3),
@@ -74,32 +40,17 @@ VALUES
     ('Luis', 'Rodríguez', 32, 'luis@correo.com', 4);
 
 -- Creando la tabla de operadores
-<<<<<<< HEAD
 CREATE TABLE operadores(
 	id INT AUTO_INCREMENT,
 	nombre VARCHAR(50),
-=======
-
-CREATE TABLE operadores(
-    id INT AUTO_INCREMENT,
-    nombre VARCHAR(50),
->>>>>>> 05b5b947cd6ff0141deeab69e215643245d59525
     apellido VARCHAR(50),
     edad INT,
     correo VARCHAR(100),
     veces_utilizado INT DEFAULT 1,
     PRIMARY KEY (id)
-<<<<<<< HEAD
 );
 
 -- Insertando 5 entradas a la tabla 'operadores'
-=======
-
-);
-
--- Insertando 5 entradas a la tabla 'operadores'
-
->>>>>>> 05b5b947cd6ff0141deeab69e215643245d59525
 INSERT INTO operadores (nombre, apellido, edad, correo, veces_utilizado)
 VALUES
     ('Laura', 'García', 27, 'laura@correo.com', 2),
@@ -109,10 +60,6 @@ VALUES
     ('Isabel', 'Vargas', 26, 'isabel@correo.com', 2);
 
 -- Creando la tabla de operaciones
-<<<<<<< HEAD
-=======
-
->>>>>>> 05b5b947cd6ff0141deeab69e215643245d59525
 CREATE TABLE operaciones (
   id INT AUTO_INCREMENT,
   operador INT,
@@ -125,10 +72,6 @@ CREATE TABLE operaciones (
 );
 
 -- Insertando 10 entradas a la tabla 'operaciones'
-<<<<<<< HEAD
-=======
-
->>>>>>> 05b5b947cd6ff0141deeab69e215643245d59525
 INSERT INTO operaciones (operador, cliente, fecha, evaluacion)
 VALUES
 	(1, 3, '2023-01-01', 4),
@@ -141,9 +84,9 @@ VALUES
 	(4, 1, '2023-08-08', 5),
 	(5, 4, '2023-09-09', 3),
 	(5, 3, '2023-10-10', 7);
-<<<<<<< HEAD
 
 COMMIT;
+
 
 /*
 Seleccionando la información requerida
@@ -194,6 +137,3 @@ COMMIT;
 SELECT *
 FROM Operadores
 WHERE Edad > 20;
-=======
-COMMIT;
->>>>>>> 05b5b947cd6ff0141deeab69e215643245d59525
