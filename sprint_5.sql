@@ -42,8 +42,8 @@ VALUES
 
 -- Creando la tabla de operadores
 CREATE TABLE operadores(
-	id INT AUTO_INCREMENT,
-	nombre VARCHAR(50),
+    id INT AUTO_INCREMENT,
+    nombre VARCHAR(50),
     apellido VARCHAR(50),
     edad INT,
     correo VARCHAR(100),
