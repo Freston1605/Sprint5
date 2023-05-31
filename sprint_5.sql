@@ -47,8 +47,8 @@ VALUES
 -- Creando la tabla de operadores
 
 CREATE TABLE operadores(
-	id INT AUTO_INCREMENT,
-	nombre VARCHAR(50),
+    id INT AUTO_INCREMENT,
+    nombre VARCHAR(50),
     apellido VARCHAR(50),
     edad INT,
     correo VARCHAR(100),
@@ -56,3 +56,42 @@ CREATE TABLE operadores(
     PRIMARY KEY (id)
 
 );
+
+-- Insertando 5 entradas a la tabla 'operadores'
+
+INSERT INTO operadores (nombre, apellido, edad, correo, veces_utilizado)
+VALUES
+    ('Laura', 'García', 27, 'laura@correo.com', 2),
+    ('Carlos', 'Ramírez', 29, 'carlos@correo.com', 3),
+    ('Sofía', 'Hernández', 31, 'sofia@correo.com', 1),
+    ('Miguel', 'Torres', 33, 'miguel@correo.com', 2),
+    ('Isabel', 'Vargas', 26, 'isabel@correo.com', 2);
+
+-- Creando la tabla de operaciones
+
+CREATE TABLE operaciones (
+  id INT AUTO_INCREMENT,
+  operador INT,
+  cliente INT,
+  fecha DATE,
+  evaluacion INT CHECK (evaluacion >= 1 AND evaluacion <= 7),
+  PRIMARY KEY (id),
+  FOREIGN KEY (operador) REFERENCES operadores (id),
+  FOREIGN KEY (cliente) REFERENCES usuarios (id)
+);
+
+-- Insertando 10 entradas a la tabla 'operaciones'
+
+INSERT INTO operaciones (operador, cliente, fecha, evaluacion)
+VALUES
+	(1, 3, '2023-01-01', 4),
+	(1, 2, '2023-02-02', 3),
+	(2, 5, '2023-03-03', 7),
+	(2, 1, '2023-04-04', 2),
+	(2, 4, '2023-05-05', 5),
+	(3, 2, '2023-06-06', 6),
+	(4, 5, '2023-07-07', 1),
+	(4, 1, '2023-08-08', 5),
+	(5, 4, '2023-09-09', 3),
+	(5, 3, '2023-10-10', 7);
+COMMIT;
