@@ -1,7 +1,4 @@
-/*
-Sprint Módulo 5
-Grupo 2
-*/
+/* Sprint Módulo 5 Grupo 2 */
 
 
 /*Creando la base de datos, las tablas e ingresando las entradas*/
